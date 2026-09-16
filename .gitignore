@@ -1,0 +1,8 @@
+sources/
+tmp/
+AGENTS.md
+build_resume.py
+找工作流程/
+.openai/
+dist/.openai/
+dist/server/

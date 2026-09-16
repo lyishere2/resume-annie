@@ -22,7 +22,7 @@
     <section class="hero"><div class="eyebrow">简历修改入口</div><h1>让简历更清楚、更匹配、更可信。</h1></section>
     <div class="grid">
       <section class="card">
-        <h2>开始修改简历</h2><p class="intro">回答几个问题，让修改有明确的目标和依据。</p>
+        <h2>开始修改简历</h2><p class="intro">回答几个问题，让修改有明确的目标和依据。默认输出 PDF；如需可编辑 Word 版本，可另行咨询。</p>
         <form id="intakeForm">
           <div class="step"><span class="step-num">1</span><div class="step-body"><label for="resumeFile">上传简历</label><label class="upload" for="resumeFile"><span style="font-size:25px">↥</span><span><strong>选择 PDF 或 Word 文件</strong><small>上传当前版本即可</small></span><input id="resumeFile" type="file" accept=".pdf,.doc,.docx"></label><div id="fileName" class="file-name"></div></div></div>
           <div class="step"><span class="step-num">2</span><div class="step-body"><label for="code">输入授权码</label><input id="code" required autocomplete="off" placeholder="示例：RA-ALPHA-05"><div class="hint">每个授权码由我们设定 2–10 次使用额度，提交前会显示剩余次数。</div><div id="codeError" class="error"></div></div></div>
@@ -43,7 +43,7 @@
     document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')!=='true')));
     async function extractText(f){
       const n=f.name.toLowerCase();
-      if(n.endsWith('.pdf')){const pdfjs=await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs'); const pdf=await pdfjs.getDocument({data:await f.arrayBuffer()}).promise; let out=''; for(let i=1;i<=pdf.numPages;i++){const page=await pdf.getPage(i); const c=await page.getTextContent(); out+=c.items.map(x=>x.str).join(' ')+'\n';} return out;}
+      if(n.endsWith('.pdf')){const pdfjs=await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs'); pdfjs.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs'; const pdf=await pdfjs.getDocument({data:await f.arrayBuffer()}).promise; let out=''; for(let i=1;i<=pdf.numPages;i++){const page=await pdf.getPage(i); const c=await page.getTextContent(); out+=c.items.map(x=>x.str).join(' ')+'\n';} return out;}
       if(n.endsWith('.docx')){const mammoth=await import('https://cdn.jsdelivr.net/npm/mammoth@1.8.0/+esm'); const r=await mammoth.extractRawText({arrayBuffer:await f.arrayBuffer()}); return r.value;}
       if(n.endsWith('.txt')) return f.text();
       throw new Error('目前支持 PDF 和 Word（.docx）文件。');
