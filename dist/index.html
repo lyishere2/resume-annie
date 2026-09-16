@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A focused North America resume revision intake workspace.">
-  <title>Resume Atelier — North America Resume Revision</title>
+  <meta name="description" content="面向北美求职市场的简历修改入口。">
+  <title>Resume Atelier — 北美简历修改</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d2333'/%3E%3Cpath d='M18 14h28v36H18z' fill='none' stroke='%23f4c95d' stroke-width='4'/%3E%3Cpath d='M25 24h14M25 32h14M25 40h9' stroke='%23f4c95d' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root{--ink:#102433;--muted:#5d6d76;--line:#d7e1e4;--paper:#fbfcfa;--cream:#f2f0e9;--gold:#e7b84b;--teal:#0e6f70;--teal-dark:#075051;--danger:#a43c36;--shadow:0 18px 50px rgba(16,36,51,.10)}
@@ -18,24 +18,24 @@
 </head>
 <body>
   <main class="shell">
-    <header class="brand"><div class="mark"><span class="mark-dot">R</span><span>Resume Atelier</span></div><div class="status"><i></i>North America focus</div></header>
-    <section class="hero"><div class="eyebrow">Focused revision intake</div><h1>Make your resume easier to read, match, and trust.</h1><p>Upload your current resume and tell us where you are applying. We use a human-readable, ATS-aware process to sharpen positioning, evidence, and page structure.</p></section>
+    <header class="brand"><div class="mark"><span class="mark-dot">R</span><span>Resume Atelier</span></div><div class="status"><i></i>北美求职方向</div></header>
+    <section class="hero"><div class="eyebrow">简历修改入口</div><h1>让简历更清楚、更匹配、更可信。</h1><p>上传现有简历，并告诉我们希望申请什么方向。我们会结合 ATS 可读性、岗位匹配、事实证据和页面结构，给出有针对性的修改建议。</p></section>
     <div class="grid">
       <section class="card">
-        <h2>Start a revision</h2><p class="intro">A short intake gives the reviewer enough context to make targeted changes.</p>
+        <h2>开始修改简历</h2><p class="intro">回答几个问题，让修改有明确的目标和依据。</p>
         <form id="intakeForm">
-          <div class="step"><span class="step-num">1</span><div class="step-body"><label for="resumeFile">Upload your resume</label><label class="upload" for="resumeFile"><span style="font-size:25px">↥</span><span><strong>Choose a PDF or Word file</strong><small>One current version is enough</small></span><input id="resumeFile" type="file" accept=".pdf,.doc,.docx"></label><div id="fileName" class="file-name"></div></div></div>
-          <div class="step"><span class="step-num">2</span><div class="step-body"><label for="code">Enter your authorization code</label><input id="code" required autocomplete="off" placeholder="Example: RA-ALPHA-05"><div class="hint">Each code is issued with 2–10 uses. We will show the remaining uses before you submit.</div><div id="codeError" class="error"></div></div></div>
-          <div class="step"><span class="step-num">3</span><div class="step-body"><label for="role">What are you targeting?</label><select id="role" required><option value="">Select a target</option><option>Healthcare / Life Sciences</option><option>Finance / Risk / Quantitative Analytics</option><option>Technology / Data / Product</option><option>Consulting / Operations</option><option>Academic / Research</option><option>Other or still exploring</option></select><div class="field"><label for="level">Career level</label><select id="level"><option>New Grad / Early Career</option><option>Mid-Career</option><option>Senior / Lead</option><option>Executive</option><option>Academic / Research</option></select></div><div class="field"><label>What should the revision prioritize?</label><div class="chips" id="chips"><button type="button" class="chip" aria-pressed="false">Positioning</button><button type="button" class="chip" aria-pressed="false">ATS clarity</button><button type="button" class="chip" aria-pressed="false">Impact bullets</button><button type="button" class="chip" aria-pressed="false">One-page structure</button></div></div><div class="field"><label for="notes">Anything we should preserve or avoid?</label><textarea id="notes" placeholder="For example: preserve my existing template; do not add claims not supported by my experience."></textarea></div></div></div>
-          <div class="actions"><button class="primary" type="submit" id="submitBtn" disabled>Submit revision request</button><span class="hint">You will receive a focused review brief after intake.</span></div><p class="privacy">Your file is used only for this revision request. Do not upload passports, SSNs, or other sensitive identity documents.</p>
-        </form><div id="result" class="result"><strong>Request received.</strong><span id="resultText">Your reviewer can now work from the uploaded resume and your target context.</span></div>
+          <div class="step"><span class="step-num">1</span><div class="step-body"><label for="resumeFile">上传简历</label><label class="upload" for="resumeFile"><span style="font-size:25px">↥</span><span><strong>选择 PDF 或 Word 文件</strong><small>上传当前版本即可</small></span><input id="resumeFile" type="file" accept=".pdf,.doc,.docx"></label><div id="fileName" class="file-name"></div></div></div>
+          <div class="step"><span class="step-num">2</span><div class="step-body"><label for="code">输入授权码</label><input id="code" required autocomplete="off" placeholder="示例：RA-ALPHA-05"><div class="hint">每个授权码由我们设定 2–10 次使用额度，提交前会显示剩余次数。</div><div id="codeError" class="error"></div></div></div>
+          <div class="step"><span class="step-num">3</span><div class="step-body"><label for="role">你准备申请什么方向？</label><select id="role" required><option value="">请选择目标方向</option><option>医疗 / 生命科学</option><option>金融 / 风险 / 量化分析</option><option>科技 / 数据 / 产品</option><option>咨询 / 运营</option><option>学术 / 研究</option><option>其他或仍在探索</option></select><div class="field"><label for="level">职业阶段</label><select id="level"><option>应届 / 职业早期</option><option>中期职业阶段</option><option>资深 / 负责人</option><option>高管</option><option>学术 / 研究</option></select></div><div class="field"><label>这次修改最希望优先解决什么？</label><div class="chips" id="chips"><button type="button" class="chip" aria-pressed="false">职业定位</button><button type="button" class="chip" aria-pressed="false">ATS 可读性</button><button type="button" class="chip" aria-pressed="false">成果型 bullet</button><button type="button" class="chip" aria-pressed="false">一页结构</button></div></div><div class="field"><label for="notes">有哪些内容需要保留或避免？</label><textarea id="notes" placeholder="例如：保留现有模板；不要加入经历无法支持的表述。"></textarea></div></div></div>
+          <div class="actions"><button class="primary" type="submit" id="submitBtn" disabled>提交修改请求</button><span class="hint">提交后会生成针对性的修改任务。</span></div><p class="privacy">文件仅用于本次修改请求。请不要上传护照、社保号码或其他敏感身份材料。</p>
+        </form><div id="result" class="result"><strong>已收到修改请求。</strong><span id="resultText">修改人员将根据简历文件和目标背景开始处理。</span></div>
       </section>
       <aside class="side">
-        <section class="card"><h3>What the review looks for</h3><div class="principles"><div class="principle"><span class="tick">✓</span><div><b>Clear North America positioning</b><span>Role, level, market, and employer-facing value.</span></div></div><div class="principle"><span class="tick">✓</span><div><b>ATS-readable structure</b><span>Clean hierarchy, standard labels, and usable keywords.</span></div></div><div class="principle"><span class="tick">✓</span><div><b>Evidence before adjectives</b><span>Actions, methods, scope, results, and boundaries.</span></div></div><div class="principle"><span class="tick">✓</span><div><b>Human review after parsing</b><span>Readable to both screening software and a recruiter.</span></div></div></div></section>
-        <section class="card"><h3>Authorization codes</h3><p class="code-note">Codes are issued by the service provider. A code carries a fixed usage allowance between 2 and 10 revisions.</p><p class="hint" style="margin-bottom:0">If your code does not work, contact the person who issued it rather than submitting the file again.</p></section>
+        <section class="card"><h3>修改会重点检查</h3><div class="principles"><div class="principle"><span class="tick">✓</span><div><b>清晰的北美求职定位</b><span>目标岗位、职业阶段、市场和雇主价值。</span></div></div><div class="principle"><span class="tick">✓</span><div><b>ATS 可读取的结构</b><span>清楚的层级、标准模块和可用关键词。</span></div></div><div class="principle"><span class="tick">✓</span><div><b>先写证据，再写形容词</b><span>动作、方法、规模、结果和事实边界。</span></div></div><div class="principle"><span class="tick">✓</span><div><b>解析之后再做人工判断</b><span>既方便筛选系统读取，也方便招聘人员阅读。</span></div></div></div></section>
+        <section class="card"><h3>授权码控制</h3><p class="code-note">授权码由我们生成，并设定 2–10 次固定额度。正式版本应由服务端记录使用次数，并支持停用或过期。</p><p class="hint" style="margin-bottom:0">如果授权码无效，请联系发码人员，不要重复上传文件。</p></section>
       </aside>
     </div>
-    <footer class="footer"><span>Resume Atelier · North America resume revision</span><span>Plain language · Evidence-led · ATS-aware</span></footer>
+    <footer class="footer"><span>Resume Atelier · 北美简历修改</span><span>表达清楚 · 证据导向 · ATS 友好</span></footer>
   </main>
   <script>
     const codeBook={"RA-ALPHA-05":5,"RA-BETA-02":2,"RA-GAMMA-10":10};
@@ -43,9 +43,9 @@
     file.addEventListener('change',()=>{nameEl.textContent=file.files[0]?file.files[0].name:''; refresh()});
     document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')!=='true')));
     function used(k){return Number(localStorage.getItem('ra:'+k)||0)}
-    function refresh(){const k=code.value.trim().toUpperCase();const max=codeBook[k]; if(k&&!max){err.textContent='Check the code and try again.'}else if(max&&used(k)>=max){err.textContent='This code has no remaining uses.'}else{err.textContent=max?`Code accepted · ${max-used(k)} use${max-used(k)===1?'':'s'} remaining.`:''} submit.disabled=!(file.files[0]&&max&&used(k)<max);}
+    function refresh(){const k=code.value.trim().toUpperCase();const max=codeBook[k]; if(k&&!max){err.textContent='请检查授权码后重试。'}else if(max&&used(k)>=max){err.textContent='该授权码已无剩余次数。'}else{err.textContent=max?`授权码有效 · ${max-used(k)} 次。`:''} submit.disabled=!(file.files[0]&&max&&used(k)<max);}
     code.addEventListener('input',refresh);
-    form.addEventListener('submit',e=>{e.preventDefault();const k=code.value.trim().toUpperCase();if(!file.files[0]||!codeBook[k]||used(k)>=codeBook[k]){refresh();return}localStorage.setItem('ra:'+k,used(k)+1);result.classList.add('show');resultText.textContent=`Your intake is ready. ${codeBook[k]-used(k)} use${codeBook[k]-used(k)===1?'':'s'} remain on this code.`;refresh();form.scrollIntoView({behavior:'smooth',block:'start'});});
+    form.addEventListener('submit',e=>{e.preventDefault();const k=code.value.trim().toUpperCase();if(!file.files[0]||!codeBook[k]||used(k)>=codeBook[k]){refresh();return}localStorage.setItem('ra:'+k,used(k)+1);result.classList.add('show');resultText.textContent=`信息已提交。该授权码还剩 ${codeBook[k]-used(k)} 次可用。`;refresh();form.scrollIntoView({behavior:'smooth',block:'start'});});
   </script>
 </body>
 </html>
