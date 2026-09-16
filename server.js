@@ -1,7 +1,7 @@
 const http=require('http'),fs=require('fs'),path=require('path');
 const {Pool}=require('pg');
 const html=fs.readFileSync(path.join(__dirname,'dist','index.html'),'utf8');
-const codes={'RA-ALPHA-05':5,'RA-BETA-02':2,'RA-GAMMA-10':10};
+const codes=Object.assign({'RA-ALPHA-05':5,'RA-BETA-02':2,'RA-GAMMA-10':10},(()=>{try{return JSON.parse(process.env.AUTH_CODES_JSON||'{}')}catch{return {}}})());
 const pool=process.env.DATABASE_URL?new Pool({connectionString:process.env.DATABASE_URL,ssl:{rejectUnauthorized:false},max:3}):null;
 const localUsage={};
 let dbReady;
